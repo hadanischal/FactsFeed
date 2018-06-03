@@ -14,7 +14,15 @@ class FeedsCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
-    
+    var feedsValue : ListModel? {
+        didSet {
+            guard let feeds = feedsValue else {
+                return
+            }
+            titleLabel?.text = feeds.title
+            descriptionLabel?.text = feeds.description
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         self.thumbnailImage.contentMode =   UIViewContentMode.scaleAspectFit

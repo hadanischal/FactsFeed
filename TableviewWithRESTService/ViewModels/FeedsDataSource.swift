@@ -26,6 +26,8 @@ class FeedsDataSource : GenericDataSource<ListModel>, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tableReuseIdentifier, for: indexPath) as! FeedsCell
+        let feedsValue = self.data.value[indexPath.row]
+        cell.feedsValue = feedsValue
         return cell
     }
 }

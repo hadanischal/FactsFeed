@@ -10,7 +10,6 @@
 		AF131D5C20C3DD1B005BF68A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF131D5820C3DD1B005BF68A /* LaunchScreen.storyboard */; };
 		AF131D5D20C3DD1B005BF68A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF131D5A20C3DD1B005BF68A /* Main.storyboard */; };
 		AF131D8E20C3E07E005BF68A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131D8B20C3E07E005BF68A /* Utility.swift */; };
-		AF131D9020C3E0D6005BF68A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131D8F20C3E0D6005BF68A /* Reachability.swift */; };
 		AF131DC020C3E1BC005BF68A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DB720C3E1BC005BF68A /* Result.swift */; };
 		AF131DC120C3E1BC005BF68A /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DB820C3E1BC005BF68A /* ErrorResult.swift */; };
 		AF131DC320C3E1BC005BF68A /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DBB20C3E1BC005BF68A /* RequestService.swift */; };
@@ -25,6 +24,9 @@
 		AF131DE120C3E577005BF68A /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DDE20C3E577005BF68A /* FeedsModel.swift */; };
 		AF131DE420C3E587005BF68A /* FeedsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DE220C3E587005BF68A /* FeedsDataSource.swift */; };
 		AF131DE520C3E587005BF68A /* FeedsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DE320C3E587005BF68A /* FeedsViewModel.swift */; };
+		AF131DE820C3E6C9005BF68A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DE620C3E6C9005BF68A /* Reachability.swift */; };
+		AF131DE920C3E6C9005BF68A /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DE720C3E6C9005BF68A /* ImageHelper.swift */; };
+		AF131DEB20C3E71E005BF68A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DEA20C3E71E005BF68A /* ImageManager.swift */; };
 		AF17C24E20BFA95100A8BA5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17C22520BFA94F00A8BA5A /* AppDelegate.swift */; };
 		AF17C25220BFA95100A8BA5A /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17C22D20BFA95000A8BA5A /* ThemeColor.swift */; };
 		AF17C25720BFA95100A8BA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF17C23520BFA95000A8BA5A /* Assets.xcassets */; };
@@ -55,7 +57,6 @@
 		AF131D5920C3DD1B005BF68A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF131D5B20C3DD1B005BF68A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF131D8B20C3E07E005BF68A /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		AF131D8F20C3E0D6005BF68A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../../../../../../Downloads/testProjects/TableviewWithRESTService/Util/Reachability.swift; sourceTree = "<group>"; };
 		AF131DB720C3E1BC005BF68A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AF131DB820C3E1BC005BF68A /* ErrorResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		AF131DBB20C3E1BC005BF68A /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
@@ -70,6 +71,9 @@
 		AF131DDE20C3E577005BF68A /* FeedsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
 		AF131DE220C3E587005BF68A /* FeedsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsDataSource.swift; sourceTree = "<group>"; };
 		AF131DE320C3E587005BF68A /* FeedsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsViewModel.swift; sourceTree = "<group>"; };
+		AF131DE620C3E6C9005BF68A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		AF131DE720C3E6C9005BF68A /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		AF131DEA20C3E71E005BF68A /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		AF17C22520BFA94F00A8BA5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF17C22D20BFA95000A8BA5A /* ThemeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		AF17C23520BFA95000A8BA5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +126,8 @@
 		AF131D8820C3E07E005BF68A /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				AF131D8F20C3E0D6005BF68A /* Reachability.swift */,
+				AF131DE720C3E6C9005BF68A /* ImageHelper.swift */,
+				AF131DE620C3E6C9005BF68A /* Reachability.swift */,
 				AF131D8B20C3E07E005BF68A /* Utility.swift */,
 			);
 			path = Util;
@@ -177,6 +182,7 @@
 		AF131DCE20C3E40B005BF68A /* FeedsAPI */ = {
 			isa = PBXGroup;
 			children = (
+				AF131DEA20C3E71E005BF68A /* ImageManager.swift */,
 				AF131DDA20C3E56C005BF68A /* FeedsService.swift */,
 			);
 			path = FeedsAPI;
@@ -458,6 +464,7 @@
 				AF131DE420C3E587005BF68A /* FeedsDataSource.swift in Sources */,
 				AF1D5B6020BF9B05004DBC36 /* TableviewWithRESTService.xcdatamodeld in Sources */,
 				AF131DC420C3E1BC005BF68A /* RequestHandler.swift in Sources */,
+				AF131DEB20C3E71E005BF68A /* ImageManager.swift in Sources */,
 				AF131DDF20C3E577005BF68A /* ListModel.swift in Sources */,
 				AF131D8E20C3E07E005BF68A /* Utility.swift in Sources */,
 				AF17C26F20BFAA2600A8BA5A /* UIColor.swift in Sources */,
@@ -466,9 +473,10 @@
 				AF131DC620C3E1BC005BF68A /* ParserHelper.swift in Sources */,
 				AF131DD920C3E48E005BF68A /* FeedsCell.swift in Sources */,
 				AF131DD720C3E48E005BF68A /* FeedsViewController.swift in Sources */,
-				AF131D9020C3E0D6005BF68A /* Reachability.swift in Sources */,
 				AF131DE520C3E587005BF68A /* FeedsViewModel.swift in Sources */,
+				AF131DE820C3E6C9005BF68A /* Reachability.swift in Sources */,
 				AF131DDB20C3E56C005BF68A /* FeedsService.swift in Sources */,
+				AF131DE920C3E6C9005BF68A /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
