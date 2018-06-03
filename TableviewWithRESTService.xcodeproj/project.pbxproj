@@ -12,6 +12,12 @@
 		AF131D6320C3DE90005BF68A /* FeedsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131D6220C3DE90005BF68A /* FeedsCell.swift */; };
 		AF131D8E20C3E07E005BF68A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131D8B20C3E07E005BF68A /* Utility.swift */; };
 		AF131D9020C3E0D6005BF68A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131D8F20C3E0D6005BF68A /* Reachability.swift */; };
+		AF131DC020C3E1BC005BF68A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DB720C3E1BC005BF68A /* Result.swift */; };
+		AF131DC120C3E1BC005BF68A /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DB820C3E1BC005BF68A /* ErrorResult.swift */; };
+		AF131DC320C3E1BC005BF68A /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DBB20C3E1BC005BF68A /* RequestService.swift */; };
+		AF131DC420C3E1BC005BF68A /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DBC20C3E1BC005BF68A /* RequestHandler.swift */; };
+		AF131DC520C3E1BC005BF68A /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DBD20C3E1BC005BF68A /* RequestFactory.swift */; };
+		AF131DC620C3E1BC005BF68A /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DBF20C3E1BC005BF68A /* ParserHelper.swift */; };
 		AF17C24E20BFA95100A8BA5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17C22520BFA94F00A8BA5A /* AppDelegate.swift */; };
 		AF17C25220BFA95100A8BA5A /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17C22D20BFA95000A8BA5A /* ThemeColor.swift */; };
 		AF17C25720BFA95100A8BA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF17C23520BFA95000A8BA5A /* Assets.xcassets */; };
@@ -45,6 +51,12 @@
 		AF131D6220C3DE90005BF68A /* FeedsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsCell.swift; sourceTree = "<group>"; };
 		AF131D8B20C3E07E005BF68A /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		AF131D8F20C3E0D6005BF68A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../../../../../../Downloads/testProjects/TableviewWithRESTService/Util/Reachability.swift; sourceTree = "<group>"; };
+		AF131DB720C3E1BC005BF68A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		AF131DB820C3E1BC005BF68A /* ErrorResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
+		AF131DBB20C3E1BC005BF68A /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		AF131DBC20C3E1BC005BF68A /* RequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		AF131DBD20C3E1BC005BF68A /* RequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		AF131DBF20C3E1BC005BF68A /* ParserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
 		AF17C22520BFA94F00A8BA5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF17C22D20BFA95000A8BA5A /* ThemeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		AF17C23520BFA95000A8BA5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +133,43 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		AF131DB520C3E1BC005BF68A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AF131DB620C3E1BC005BF68A /* Result */,
+				AF131DB920C3E1BC005BF68A /* Network */,
+				AF131DBE20C3E1BC005BF68A /* Parser */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AF131DB620C3E1BC005BF68A /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				AF131DB720C3E1BC005BF68A /* Result.swift */,
+				AF131DB820C3E1BC005BF68A /* ErrorResult.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		AF131DB920C3E1BC005BF68A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AF131DBB20C3E1BC005BF68A /* RequestService.swift */,
+				AF131DBC20C3E1BC005BF68A /* RequestHandler.swift */,
+				AF131DBD20C3E1BC005BF68A /* RequestFactory.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AF131DBE20C3E1BC005BF68A /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				AF131DBF20C3E1BC005BF68A /* ParserHelper.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		AF17C22420BFA94F00A8BA5A /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +238,7 @@
 				AF131D5E20C3DE6B005BF68A /* View */,
 				AF17C23620BFA95000A8BA5A /* Controller */,
 				AF131D5720C3DD1B005BF68A /* Storyboard */,
+				AF131DB520C3E1BC005BF68A /* Services */,
 				AF17C23420BFA95000A8BA5A /* Resources */,
 				AF17C26D20BFAA2600A8BA5A /* Extension */,
 				AF131D8820C3E07E005BF68A /* Util */,
@@ -350,12 +400,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF131DC020C3E1BC005BF68A /* Result.swift in Sources */,
+				AF131DC320C3E1BC005BF68A /* RequestService.swift in Sources */,
+				AF131DC120C3E1BC005BF68A /* ErrorResult.swift in Sources */,
 				AF17C24E20BFA95100A8BA5A /* AppDelegate.swift in Sources */,
 				AF17C25220BFA95100A8BA5A /* ThemeColor.swift in Sources */,
 				AF17C26520BFA9E500A8BA5A /* FeedViewController.swift in Sources */,
 				AF1D5B6020BF9B05004DBC36 /* TableviewWithRESTService.xcdatamodeld in Sources */,
+				AF131DC420C3E1BC005BF68A /* RequestHandler.swift in Sources */,
 				AF131D8E20C3E07E005BF68A /* Utility.swift in Sources */,
 				AF17C26F20BFAA2600A8BA5A /* UIColor.swift in Sources */,
+				AF131DC520C3E1BC005BF68A /* RequestFactory.swift in Sources */,
+				AF131DC620C3E1BC005BF68A /* ParserHelper.swift in Sources */,
 				AF131D9020C3E0D6005BF68A /* Reachability.swift in Sources */,
 				AF131D6320C3DE90005BF68A /* FeedsCell.swift in Sources */,
 			);
