@@ -12,8 +12,7 @@ class FeedsCell: UITableViewCell {
     @IBOutlet var thumbnailImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     var feedsValue : ListModel? {
         didSet {
             guard let feeds = feedsValue else {

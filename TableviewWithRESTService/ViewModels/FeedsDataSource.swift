@@ -32,15 +32,15 @@ class FeedsDataSource : GenericDataSource<ListModel>, UITableViewDataSource {
             ImageHelper().updateImageForTableViewCell(cell, inTableView: tableView, imageURL: feedsValue.imageRef, atIndexPath: indexPath, completion: { (success, image) in
                 if success && image != nil {
                     cell.thumbnailImage.isHidden = false
-                    cell.imageWidthConstraint.constant = 60
+                    cell.leadingConstraint.constant = 68
                 }else{
                     cell.thumbnailImage.isHidden = true
-                    cell.imageWidthConstraint.constant = 0
+                    cell.leadingConstraint.constant = 0
                 }
             })
         }else{
             cell.thumbnailImage.isHidden = true
-            cell.imageWidthConstraint.constant = 0
+            cell.leadingConstraint.constant = 0
         }
         return cell
     }
