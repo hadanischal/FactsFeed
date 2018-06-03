@@ -33,6 +33,7 @@
 		AF131DF420C3F466005BF68A /* FeedsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DF320C3F466005BF68A /* FeedsViewModelTests.swift */; };
 		AF131DF620C3F494005BF68A /* FeedsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DF520C3F494005BF68A /* FeedsModelTests.swift */; };
 		AF131DF820C3F4B7005BF68A /* FeedsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DF720C3F4B7005BF68A /* FeedsViewControllerTests.swift */; };
+		AF131DFA20C3F4D7005BF68A /* facts.json in Resources */ = {isa = PBXBuildFile; fileRef = AF131DF920C3F4D6005BF68A /* facts.json */; };
 		AF17C24E20BFA95100A8BA5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17C22520BFA94F00A8BA5A /* AppDelegate.swift */; };
 		AF17C25220BFA95100A8BA5A /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17C22D20BFA95000A8BA5A /* ThemeColor.swift */; };
 		AF17C25720BFA95100A8BA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF17C23520BFA95000A8BA5A /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		AF131DF320C3F466005BF68A /* FeedsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsViewModelTests.swift; sourceTree = "<group>"; };
 		AF131DF520C3F494005BF68A /* FeedsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModelTests.swift; sourceTree = "<group>"; };
 		AF131DF720C3F4B7005BF68A /* FeedsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsViewControllerTests.swift; sourceTree = "<group>"; };
+		AF131DF920C3F4D6005BF68A /* facts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facts.json; sourceTree = "<group>"; };
 		AF17C22520BFA94F00A8BA5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF17C22D20BFA95000A8BA5A /* ThemeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		AF17C23520BFA95000A8BA5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		AF1D5B6E20BF9B05004DBC36 /* TableviewWithRESTServiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF131DF920C3F4D6005BF68A /* facts.json */,
 				AF131DF720C3F4B7005BF68A /* FeedsViewControllerTests.swift */,
 				AF131DF520C3F494005BF68A /* FeedsModelTests.swift */,
 				AF131DF320C3F466005BF68A /* FeedsViewModelTests.swift */,
@@ -456,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF131DFA20C3F4D7005BF68A /* facts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
