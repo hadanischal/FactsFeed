@@ -322,11 +322,11 @@
 			isa = PBXGroup;
 			children = (
 				AF131DF920C3F4D6005BF68A /* facts.json */,
-				AF131DF720C3F4B7005BF68A /* FeedsViewControllerTests.swift */,
 				AF131DF520C3F494005BF68A /* FeedsModelTests.swift */,
 				AF131DF320C3F466005BF68A /* FeedsViewModelTests.swift */,
 				AF131DF120C3F44A005BF68A /* FeedsServiceTests.swift */,
 				AF131DEF20C3F42E005BF68A /* FeedsDataSourceTests.swift */,
+				AF131DF720C3F4B7005BF68A /* FeedsViewControllerTests.swift */,
 				AF1D5B6F20BF9B05004DBC36 /* TableviewWithRESTServiceTests.swift */,
 				AF1D5B7120BF9B05004DBC36 /* Info.plist */,
 			);
