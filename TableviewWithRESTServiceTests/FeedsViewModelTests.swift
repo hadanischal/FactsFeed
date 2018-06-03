@@ -7,29 +7,59 @@
 //
 
 import XCTest
+@testable import TableviewWithRESTService
 
 class FeedsViewModelTests: XCTestCase {
+    fileprivate class MockFeedsService: FeedsServiceProtocol {
+        var feedsData: FeedsModel?
+        func fetchConverter(_ completion: @escaping ((Result<FeedsModel, ErrorResult>) -> Void)) {
+            if let data = feedsData {
+                completion(Result.success(data))
+            } else {
+                completion(Result.failure(ErrorResult.custom(string: "No converter")))
+            }
+        }
+    }
+    
+    var viewModel : FeedsViewModel!
+    var dataSource : GenericDataSource<ListModel>!
+    fileprivate var service : MockFeedsService!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.service = MockFeedsService()
+        self.dataSource = GenericDataSource<ListModel>()
+        self.viewModel = FeedsViewModel(service: service, dataSource: dataSource)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.viewModel = nil
+        self.dataSource = nil
+        self.service = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFetchFeeds() {
+        service.feedsData = FeedsModel(title: "Canada", rows: [])
+        viewModel.fetchServiceCall{ result in
+            switch result {
+            case .failure(_) :
+                XCTAssert(false, "ViewModel should not be able to fetch without service")
+            default: break
+            }
+        }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFetchNoFeeds() {
+        service.feedsData = nil
+        viewModel.fetchServiceCall { result in
+            switch result {
+            case .success(_) :
+                XCTAssert(false, "ViewModel should not be able to fetch ")
+            default: break
+            }
         }
     }
     
 }
+
