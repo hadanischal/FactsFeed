@@ -11,7 +11,6 @@ import UIKit
 class FeedsViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     @IBOutlet weak var tableView: UITableView!
-    
     fileprivate var service : FeedsService! = FeedsService()
     let dataSource = FeedsDataSource()
     lazy var viewModel : FeedsViewModel = {
@@ -30,7 +29,7 @@ class FeedsViewController: UIViewController {
         self.serviceCall()
     }
     
-    func setupUIRefreshControl(){
+    func setupUIRefreshControl(){//refresh
         refreshControl.addTarget(self, action: #selector(serviceCall), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshControl)
     }
