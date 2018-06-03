@@ -7,29 +7,70 @@
 //
 
 import XCTest
+@testable import TableviewWithRESTService
 
 class FeedsDataSourceTests: XCTestCase {
+    var dataSource : FeedsDataSource!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        dataSource = FeedsDataSource()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        dataSource = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEmptyValueInDataSource() {
+        dataSource.data.value = []  // giving empty data value
+        let tableView = UITableView()
+        tableView.dataSource = dataSource
+        XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 0, "Expected no cell in table view")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testValueInDataSource() {
+        let responseResults:[ListModel] = getDataValue()
+        let newArray = Array(responseResults[0..<2])
+        dataSource.data.value = newArray
+        let tableView = UITableView()
+        tableView.dataSource = dataSource
+        XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 2, "Expected two cell in table view")
+    }
+    
+    func testValueCell() {
+        dataSource.data.value = getDataValue()
+        let tableView = UITableView()
+        tableView.dataSource = dataSource
+        tableView.register(FeedsCell.self, forCellReuseIdentifier: "FeedsCell")
+        let indexPath = IndexPath(row: 0, section: 0)
+        guard let _ = dataSource.tableView(tableView, cellForRowAt: indexPath) as? FeedsCell else {
+            XCTAssert(false, "Expected LandscapeTableViewCell class")
+            return
         }
     }
     
+    func getDataValue() ->[ListModel]{
+        var responseResults = [ListModel]()
+        guard let data = FileManager.readJson(forResource: "facts") else {
+            XCTAssert(false, "Can't get data from facts.json")
+            return responseResults
+        }
+        let completion : ((Result<FeedsModel, ErrorResult>) -> Void) = { result in
+            switch result {
+            case .failure(_):
+                XCTAssert(false, "Expected valid converter")
+            case .success(let converter):
+                print(converter)
+                responseResults = converter.rows
+                break
+            }
+        }
+        ParserHelper.parse(data: data, completion: completion)
+        return responseResults
+    }
+    
 }
+
