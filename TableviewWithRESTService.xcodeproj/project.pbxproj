@@ -28,6 +28,7 @@
 		AF131DE920C3E6C9005BF68A /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DE720C3E6C9005BF68A /* ImageHelper.swift */; };
 		AF131DEB20C3E71E005BF68A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DEA20C3E71E005BF68A /* ImageManager.swift */; };
 		AF131DED20C3F16D005BF68A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DEC20C3F16D005BF68A /* String.swift */; };
+		AF131DF020C3F42E005BF68A /* FeedsDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF131DEF20C3F42E005BF68A /* FeedsDataSourceTests.swift */; };
 		AF17C24E20BFA95100A8BA5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17C22520BFA94F00A8BA5A /* AppDelegate.swift */; };
 		AF17C25220BFA95100A8BA5A /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17C22D20BFA95000A8BA5A /* ThemeColor.swift */; };
 		AF17C25720BFA95100A8BA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF17C23520BFA95000A8BA5A /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		AF131DE720C3E6C9005BF68A /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		AF131DEA20C3E71E005BF68A /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		AF131DEC20C3F16D005BF68A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		AF131DEF20C3F42E005BF68A /* FeedsDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsDataSourceTests.swift; sourceTree = "<group>"; };
 		AF17C22520BFA94F00A8BA5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF17C22D20BFA95000A8BA5A /* ThemeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		AF17C23520BFA95000A8BA5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		AF1D5B6E20BF9B05004DBC36 /* TableviewWithRESTServiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF131DEF20C3F42E005BF68A /* FeedsDataSourceTests.swift */,
 				AF1D5B6F20BF9B05004DBC36 /* TableviewWithRESTServiceTests.swift */,
 				AF1D5B7120BF9B05004DBC36 /* Info.plist */,
 			);
@@ -488,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF131DF020C3F42E005BF68A /* FeedsDataSourceTests.swift in Sources */,
 				AF1D5B7020BF9B05004DBC36 /* TableviewWithRESTServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
