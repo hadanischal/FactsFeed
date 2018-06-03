@@ -26,7 +26,6 @@ class ImageManager: NSObject {
     func clearCache() { imageCache.removeAll() }
     
     func downloadImageFromURL(_ urlString: String, completion: ((_ success: Bool, _ image: UIImage?) -> Void)?) {
-        // do we have this cached?
         if let cachedImage = cachedImageForURL(urlString) {
             DispatchQueue.main.async(execute: {completion?(true, cachedImage) })
         } else if let url = URL(string: urlString) { // download from URL asynchronously

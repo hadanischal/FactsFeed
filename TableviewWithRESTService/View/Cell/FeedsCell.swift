@@ -20,8 +20,13 @@ class FeedsCell: UITableViewCell {
             }
             titleLabel?.text = feeds.title
             descriptionLabel?.text = feeds.description
+            if feeds.imageRef == ""  && feeds.imageRef == "N/A"{
+                self.thumbnailImage.isHidden = true
+                self.leadingConstraint.constant = 0
+            }
         }
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.thumbnailImage.contentMode =   UIViewContentMode.scaleAspectFit

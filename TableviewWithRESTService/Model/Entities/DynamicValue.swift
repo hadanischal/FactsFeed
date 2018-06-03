@@ -10,7 +10,6 @@ import Foundation
 
 typealias CompletionHandler = (() -> Void)
 class DynamicValue<T> {
-    
     var value : T {
         didSet {
             self.notify()

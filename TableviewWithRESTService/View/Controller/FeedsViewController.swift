@@ -49,9 +49,6 @@ class FeedsViewController: UIViewController {
         }
         refreshControl.endRefreshing()
     }
-}
-
-extension FeedsViewController {
     func setupUI() {
         self.tableView.backgroundColor = ThemeColor.white
         self.view.backgroundColor = ThemeColor.white
@@ -73,4 +70,3 @@ extension FeedsViewController : UITableViewDelegate{
         return UITableViewAutomaticDimension
     }
 }
-

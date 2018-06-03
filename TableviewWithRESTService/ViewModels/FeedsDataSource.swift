@@ -28,20 +28,16 @@ class FeedsDataSource : GenericDataSource<ListModel>, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: tableReuseIdentifier, for: indexPath) as! FeedsCell
         let feedsValue = self.data.value[indexPath.row]
         cell.feedsValue = feedsValue
-        if feedsValue.imageRef != ""  && feedsValue.imageRef != "N/A"{
-            ImageHelper().updateImageForTableViewCell(cell, inTableView: tableView, imageURL: feedsValue.imageRef, atIndexPath: indexPath, completion: { (success, image) in
-                if success && image != nil {
-                    cell.thumbnailImage.isHidden = false
-                    cell.leadingConstraint.constant = 68
-                }else{
-                    cell.thumbnailImage.isHidden = true
-                    cell.leadingConstraint.constant = 0
-                }
-            })
-        }else{
-            cell.thumbnailImage.isHidden = true
-            cell.leadingConstraint.constant = 0
-        }
+        ImageHelper().updateImageForTableViewCell(cell, inTableView: tableView, imageURL: feedsValue.imageRef, atIndexPath: indexPath, completion: { (success, image) in
+            if success && image != nil {
+                cell.thumbnailImage.isHidden = false
+                cell.leadingConstraint.constant = 68
+            }else{
+                cell.thumbnailImage.isHidden = true
+                cell.leadingConstraint.constant = 0
+            }
+        })
+
         return cell
     }
 }
