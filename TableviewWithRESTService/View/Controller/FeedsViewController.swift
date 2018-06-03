@@ -33,7 +33,6 @@ class FeedsViewController: UIViewController {
     func setupUIRefreshControl(){
         refreshControl.addTarget(self, action: #selector(serviceCall), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshControl)
-        
     }
     @objc func serviceCall() {
         DispatchQueue.main.async {
@@ -41,7 +40,7 @@ class FeedsViewController: UIViewController {
             self.viewModel.fetchServiceCall { result in
                 switch result {
                 case .success :
-                    self.title = self.viewModel.title
+                    self.title = self.viewModel.title //json value
                     break
                 case .failure :
                     break
