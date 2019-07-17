@@ -1,6 +1,6 @@
 //
 //  FeedsCell.swift
-//  FactsFeedTests
+//  FactsFeed
 //
 //  Created by Nischal Hada on 6/3/18.
 //  Copyright © 2018 NischalHada. All rights reserved.

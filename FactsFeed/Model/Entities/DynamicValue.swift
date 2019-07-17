@@ -1,6 +1,6 @@
 //
 //  DynamicValue.swift
-//  FactsFeedTests
+//  FactsFeed
 //
 //  Created by Nischal Hada on 5/31/18.
 //  Copyright © 2018 NischalHada. All rights reserved.
