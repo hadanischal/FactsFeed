@@ -14,7 +14,7 @@ class FeedsViewController: UIViewController {
     fileprivate var service: FeedsService! = FeedsService()
     let dataSource = FeedsDataSource()
     lazy var viewModel: FeedsViewModel = {
-        let viewModel = FeedsViewModel(service: service, dataSource: dataSource)
+        let viewModel = FeedsViewModel(withService: service, withDataSource: dataSource)
         return viewModel
     }()
 

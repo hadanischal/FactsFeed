@@ -6,18 +6,16 @@
 //  Copyright © 2018 NischalHada. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-public protocol ImageSession: class {
-    func updateImageForTableViewCell(_ cell: UITableViewCell, inTableView tableView: UITableView, imageURL: String, atIndexPath indexPath: IndexPath)
+class ImageHelper: ImageHelperProtocol {
+    private let kLazyLoadCellImageViewTag = 1
+    private let kLazyLoadPlaceholderImage = UIImage(named: "placeholder")!
+    private let imageManager: ImageManager!
 
-}
-
-class ImageHelper: ImageSession {
-    fileprivate let kLazyLoadCellImageViewTag = 1
-    fileprivate let kLazyLoadPlaceholderImage = UIImage(named: "placeholder")!
-    var imageManager: ImageManager { return ImageManager() }
+    init(withImagemanager imageManager: ImageManager = ImageManager()) {
+        self.imageManager = imageManager
+    }
 
     func updateImageForTableViewCell(_ cell: UITableViewCell, inTableView tableView: UITableView, imageURL: String, atIndexPath indexPath: IndexPath) {
         let imageView = cell.viewWithTag(kLazyLoadCellImageViewTag) as? UIImageView
@@ -41,7 +39,6 @@ class ImageHelper: ImageSession {
                 }
             }
             DispatchQueue.main.async(execute: { completion?(true, image) })
-
         }
     }
 }

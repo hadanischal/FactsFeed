@@ -31,7 +31,7 @@ class FeedsDataSourceTests: XCTestCase {
     }
 
     func testValueInDataSource() {
-        let responseResults: [ListModel] = getDataValue()
+        let responseResults: [ListModel] = MockData().getFeedslist()
         let newArray = Array(responseResults[0..<2])
         dataSource.data.value = newArray
         let tableView = UITableView()
@@ -41,7 +41,7 @@ class FeedsDataSourceTests: XCTestCase {
     }
 
     func testValueCell() {
-        dataSource.data.value = getDataValue()
+        dataSource.data.value = MockData().getFeedslist()
         let tableView = UITableView()
         tableView.dataSource = dataSource
         tableView.register(FeedsCell.self, forCellReuseIdentifier: "FeedsCell")
@@ -50,26 +50,6 @@ class FeedsDataSourceTests: XCTestCase {
             XCTAssert(false, "Expected LandscapeTableViewCell class")
             return
         }
-    }
-
-    func getDataValue() -> [ListModel] {
-        var responseResults = [ListModel]()
-        guard let data = FileManager.readJson(forResource: "facts") else {
-            XCTAssert(false, "Can't get data from facts.json")
-            return responseResults
-        }
-        let completion: ((Result<FeedsModel, ErrorResult>) -> Void) = { result in
-            switch result {
-            case .failure:
-                XCTAssert(false, "Expected valid converter")
-            case .success(let converter):
-                print(converter)
-                responseResults = converter.rows
-                break
-            }
-        }
-        ParserHelper.parse(data: data, completion: completion)
-        return responseResults
     }
 
 }
