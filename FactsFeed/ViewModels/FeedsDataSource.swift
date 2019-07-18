@@ -12,6 +12,7 @@ import UIKit
 class GenericDataSource<T>: NSObject {
     var data: DynamicValue<[T]> = DynamicValue([])
     fileprivate let tableReuseIdentifier = "FeedsCell"
+    fileprivate let imageHelper: ImageHelperProtocol = ImageHelper()
 }
 
 class FeedsDataSource: GenericDataSource<ListModel>, UITableViewDataSource {
@@ -31,7 +32,7 @@ class FeedsDataSource: GenericDataSource<ListModel>, UITableViewDataSource {
         guard let imageUrl = feedsValue.imageHref else {
             return cell
         }
-        ImageHelper().updateImageForTableViewCell(cell, inTableView: tableView, imageURL: imageUrl, atIndexPath: indexPath, completion: { (success, image) in
+        imageHelper.updateImageForTableViewCell(cell, inTableView: tableView, imageURL: imageUrl, atIndexPath: indexPath, completion: { (success, image) in
             if success && image != nil {
                 cell.thumbnailImage.isHidden = false
                 cell.leadingConstraint.constant = 68

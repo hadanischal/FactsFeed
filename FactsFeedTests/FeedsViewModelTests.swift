@@ -11,7 +11,7 @@ import XCTest
 
 class FeedsViewModelTests: XCTestCase {
 
-    var viewModel: FeedsViewModel!
+    var viewModel: FeedsViewModelProtocol!
     private var mockDataSource: GenericDataSource<ListModel>!
     private var mockService: MockFeedsService!
 

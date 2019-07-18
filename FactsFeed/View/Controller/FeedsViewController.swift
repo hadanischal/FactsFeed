@@ -13,7 +13,7 @@ class FeedsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     fileprivate var service: FeedsService! = FeedsService()
     let dataSource = FeedsDataSource()
-    lazy var viewModel: FeedsViewModel = {
+    lazy var viewModel: FeedsViewModelProtocol = {
         let viewModel = FeedsViewModel(withService: service, withDataSource: dataSource)
         return viewModel
     }()
