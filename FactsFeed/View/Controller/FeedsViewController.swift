@@ -11,13 +11,13 @@ import UIKit
 class FeedsViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     @IBOutlet weak var tableView: UITableView!
-    fileprivate var service : FeedsService! = FeedsService()
+    fileprivate var service: FeedsService! = FeedsService()
     let dataSource = FeedsDataSource()
-    lazy var viewModel : FeedsViewModel = {
+    lazy var viewModel: FeedsViewModel = {
         let viewModel = FeedsViewModel(service: service, dataSource: dataSource)
         return viewModel
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self.dataSource
@@ -28,8 +28,8 @@ class FeedsViewController: UIViewController {
         self.setupUIRefreshControl()
         self.serviceCall()
     }
-    
-    func setupUIRefreshControl(){//refresh
+
+    func setupUIRefreshControl() {//refresh
         refreshControl.addTarget(self, action: #selector(serviceCall), for: UIControl.Event.valueChanged)
         self.tableView.addSubview(refreshControl)
     }
@@ -59,7 +59,7 @@ class FeedsViewController: UIViewController {
 
 // MARK: - TableViewDelegate Setup
 
-extension FeedsViewController : UITableViewDelegate{
+extension FeedsViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
