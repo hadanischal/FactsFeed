@@ -8,14 +8,15 @@
 
 import Foundation
 
-class FeedsViewModel {
+class FeedsViewModel: FeedsViewModelProtocol {
+    //Input
+    private var service: FeedsServiceProtocol?
     weak var dataSource: GenericDataSource<ListModel>?
-    var cellDidSelect: GenericDataSource<Int>?
-    var title: String?
-    var selectedData: ListModel?
-    weak var service: FeedsServiceProtocol?
 
-    init(service: FeedsServiceProtocol, dataSource: GenericDataSource<ListModel>?) {
+    //Output
+    var title: String?
+
+    init(withService service: FeedsServiceProtocol, withDataSource dataSource: GenericDataSource<ListModel>?) {
         self.dataSource = dataSource
         self.service = service
     }
@@ -25,7 +26,7 @@ class FeedsViewModel {
             completion?(Result.failure(ErrorResult.custom(string: "Missing service")))
             return
         }
-        service.fetchConverter { result in
+        service.fetchFeeds { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let converter) :
@@ -50,8 +51,4 @@ class FeedsViewModel {
         }
     }
 
-    func didSelectItemAt(indexPath: IndexPath) {
-        let feedsValue = dataSource?.data.value[indexPath.row]
-        selectedData = feedsValue
-    }
 }
