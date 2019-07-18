@@ -11,14 +11,14 @@ import UIKit
 
 public protocol ImageSession: class {
     func updateImageForTableViewCell(_ cell: UITableViewCell, inTableView tableView: UITableView, imageURL: String, atIndexPath indexPath: IndexPath)
-    
+
 }
 
-class ImageHelper:ImageSession{
+class ImageHelper: ImageSession {
     fileprivate let kLazyLoadCellImageViewTag = 1
     fileprivate let kLazyLoadPlaceholderImage = UIImage(named: "placeholder")!
     var imageManager: ImageManager { return ImageManager() }
-    
+
     func updateImageForTableViewCell(_ cell: UITableViewCell, inTableView tableView: UITableView, imageURL: String, atIndexPath indexPath: IndexPath) {
         let imageView = cell.viewWithTag(kLazyLoadCellImageViewTag) as? UIImageView
         imageView?.image = kLazyLoadPlaceholderImage
@@ -30,8 +30,8 @@ class ImageHelper:ImageSession{
             }
         }
     }
-    
-    func updateImageForTableViewCell(_ cell: UITableViewCell, inTableView tableView: UITableView, imageURL: String, atIndexPath indexPath: IndexPath , completion: ((_ success: Bool, _ image: UIImage?) -> Void)?) {
+
+    func updateImageForTableViewCell(_ cell: UITableViewCell, inTableView tableView: UITableView, imageURL: String, atIndexPath indexPath: IndexPath, completion: ((_ success: Bool, _ image: UIImage?) -> Void)?) {
         let imageView = cell.viewWithTag(kLazyLoadCellImageViewTag) as? UIImageView
         imageView?.image = kLazyLoadPlaceholderImage
         imageManager.downloadImageFromURL(imageURL) { (success, image) -> Void in
@@ -40,9 +40,8 @@ class ImageHelper:ImageSession{
                     imageView?.image = image
                 }
             }
-            DispatchQueue.main.async(execute: { completion?(true, image) });
-            
+            DispatchQueue.main.async(execute: { completion?(true, image) })
+
         }
     }
 }
-
