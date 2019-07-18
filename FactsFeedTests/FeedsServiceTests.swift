@@ -13,9 +13,9 @@ class FeedsServiceTests: XCTestCase {
 
     func testCancelRequest() {
         let service: FeedsService! = FeedsService()
-        service.fetchConverter { (_) in
+        service.fetchFeeds { (_) in
         }
-        service.cancelFetchCurrencies()
+        service.cancelFetchFeeds()
         XCTAssertNil(service.task, "Expected task nil")
     }
 }

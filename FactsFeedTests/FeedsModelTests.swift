@@ -19,7 +19,7 @@ class FeedsModelTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExampleEmptyCurrency() {
+    func testEmptyFeedsResult() {
         let data = Data()
         let completion: ((Result<FeedsModel, ErrorResult>) -> Void) = { result in
             switch result {
@@ -32,44 +32,33 @@ class FeedsModelTests: XCTestCase {
         ParserHelper.parse(data: data, completion: completion)
     }
 
-    func testParseCurrency() {
-        guard let data = FileManager.readJson(forResource: "facts") else {
-            XCTAssert(false, "Can't get data from sample.json")
-            return
-        }
+    func testParseFeedsResult() {
+        let data = MockData().getFactsData()
         let completion: ((Result<FeedsModel, ErrorResult>) -> Void) = { result in
             switch result {
             case .failure:
-                XCTAssert(false, "Expected valid converter")
-            case .success(let converter):
-                XCTAssertEqual(converter.title, "About Canada", "Expected About Canada base")
-                XCTAssertEqual(converter.rows.count, 14, "Expected 14 rates")
+                XCTAssert(false, "Expected valid FeedsModel")
+            case .success(let response):
+                XCTAssertEqual(response.title, "About Canada", "Expected About Canada base")
+                if let list = response.rows {
+                    XCTAssertEqual(list.count, 14, "Expected 14 rates")
+
+                } else {
+                    XCTAssert(false, "Expected valid ListModel")
+                }
             }
         }
         ParserHelper.parse(data: data, completion: completion)
     }
 
-    func testWrongKeyCurrency() {
-        let dictionary = ["testObject": 123 as AnyObject]
-        let result = FeedsModel.parseObject(dictionary: dictionary)
+    func testWrongKeyFeedsResult() {
+        let data = Data()
+        let result = FeedsModel.parseObject(data: data)
         switch result {
         case .success:
             XCTAssert(false, "Expected failure when wrong data")
         default:
             return
         }
-    }
-}
-extension FileManager {
-    static func readJson(forResource fileName: String ) -> Data? {
-        let bundle = Bundle(for: FeedsDataSourceTests.self)
-        if let path = bundle.path(forResource: fileName, ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                return data
-            } catch {
-            }
-        }
-        return nil
     }
 }
